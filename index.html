@@ -84,11 +84,21 @@
         // Também deixamos o 'mouseover' caso abras no PC
         btnNao.addEventListener("mouseover", foge);
 
-        function vitoria() {
-            alert("Sabia que ias dizer que sim! Preparada? 😍");
-            // Aqui podes redirecionar para o teu WhatsApp, por exemplo:
-            // window.location.href = "https://wa.me/teunumerotelefone";
-        }
+       function vitoria() {
+    alert("Sabia que ias dizer que sim! Preparada? 😍");
+
+    const link = document.createElement('a');
+    
+    // É importante usar o nome exato. Espaços no URL são convertidos para %20
+    link.href = 'MELHOR%20MUSICA%20DE%20SEMPRE.mp3'; 
+    
+    // Nome do ficheiro quando ela o guardar no telemóvel
+    link.download = 'MELHOR MUSICA DE SEMPRE.mp3'; 
+    
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
     </script>
 </body>
 </html>
